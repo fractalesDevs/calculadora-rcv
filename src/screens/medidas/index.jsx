@@ -1,13 +1,15 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text, SafeAreaView } from 'react-native';
+import { useSelector } from 'react-redux';
 
 import { styles } from './styles';
 
 const Medidas = () => {
+  const medida = useSelector((state) => state.medidas.selected);
   return (
-    <View style={styles.container}>
-      <Text>MEDIDAS</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text>{medida.title}</Text>
+    </SafeAreaView>
   );
 };
 

@@ -1,8 +1,9 @@
 import { useFonts } from 'expo-font';
-import { View, ActivityIndicator, SafeAreaView } from 'react-native';
+import { ActivityIndicator } from 'react-native';
+import { Provider } from 'react-redux';
 
 import Navigation from './navigation';
-import { styles } from './styles';
+import store from './store/index';
 
 export default function App() {
   const [loaded] = useFonts({
@@ -15,8 +16,8 @@ export default function App() {
     return <ActivityIndicator size="large" />;
   }
   return (
-    <View style={styles.container}>
+    <Provider store={store}>
       <Navigation />
-    </View>
+    </Provider>
   );
 }

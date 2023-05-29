@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { COLORS } from '../../constants/theme/colors';
-import { Prevencion, Medidas } from '../../screens';
+import { Prevencion, Medidas, Medida } from '../../screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,7 +20,13 @@ const PrevencionNavigator = () => {
         },
       }}>
       <Stack.Screen name="Prevencion" component={Prevencion} />
-      <Stack.Screen name="Medidas" component={Medidas} />
+      <Stack.Screen
+        name="Medidas"
+        options={({ route }) => ({
+          title: route.params.name,
+        })}
+        component={Medidas}
+      />
     </Stack.Navigator>
   );
 };
