@@ -10,7 +10,7 @@ import PrevencionNavigator from '../med-prevencion';
 const TabBottom = createBottomTabNavigator();
 
 const TabsNavigator = () => {
-  const { width, height } = Dimensions.get('screen');
+  const { height } = Dimensions.get('screen');
   return (
     <TabBottom.Navigator
       initialRouteName="InicioTab"

@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { COLORS } from '../../constants/theme/colors';
-import { Prevencion, Medidas, Medida } from '../../screens';
+import { Prevencion, Medidas } from '../../screens';
 
 const Stack = createNativeStackNavigator();
 

@@ -8,4 +8,5 @@ export const COLORS = {
   white: '#ffffff',
   lightGray: '#F2F4FE',
   darkGray: '#F2F4FE',
+  backs: '#DCE9FF',
 };

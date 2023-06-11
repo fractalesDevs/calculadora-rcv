@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, View, Text } from 'react-native';
+import { FlatList, View, Text, ScrollView, Image } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { styles } from './styles';
@@ -18,10 +18,18 @@ const Prevencion = ({ navigation }) => {
   const keyExtractor = (item) => item.id.toString();
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.titMedidas}>MEDIDAS DE PREVENCIÓN</Text>
-      <FlatList data={medidas} renderItem={renderItem} keyExtractor={keyExtractor} />
-    </View>
+    <ScrollView style={styles.scrollCont}>
+      <View style={styles.container}>
+        <Image style={styles.logoMed} source={require('../../../assets/img/logo-medidas.png')} />
+        <Text style={styles.titMedidas}>
+          Recuérdele a su paciente que hay muchas cosas que puede hacer para disminuir su riesgo
+          cardio vascular o riesgo de sufrir alguna enfermedad del corazón.
+        </Text>
+      </View>
+      <View style={styles.container2}>
+        <FlatList data={medidas} renderItem={renderItem} keyExtractor={keyExtractor} />
+      </View>
+    </ScrollView>
   );
 };
 

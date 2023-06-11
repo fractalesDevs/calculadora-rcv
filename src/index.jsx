@@ -1,8 +1,9 @@
 import { useFonts } from 'expo-font';
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 import { Provider } from 'react-redux';
 
 import Navigation from './navigation';
+import { Inicio, FotoPerfil } from './screens/index';
 import store from './store/index';
 
 export default function App() {
@@ -17,7 +18,7 @@ export default function App() {
   }
   return (
     <Provider store={store}>
-      <Navigation />
+      <FotoPerfil />
     </Provider>
   );
 }
