@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { COLORS } from '../../constants/theme/colors';
-import { Inicio } from '../../screens';
+import { Inicio, FotoPerfil } from '../../screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +20,7 @@ const InicioNavigator = () => {
         },
       }}>
       <Stack.Screen name="Inicio" component={Inicio} />
+      <Stack.Screen name="FotoPerfil" component={FotoPerfil} />
     </Stack.Navigator>
   );
 };

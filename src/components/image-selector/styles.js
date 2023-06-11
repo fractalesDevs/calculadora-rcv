@@ -17,8 +17,8 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     marginVertical: 25,
     justifyContent: 'center',
-    borderRadius: 20,
     borderColor: COLORS.primary,
+    backgroundColor: COLORS.white,
   },
   txtDesc: {
     fontFamily: 'Montserrat-Bold',
@@ -27,5 +27,8 @@ export const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
+  },
+  btn: {
+    width: width * 0.8,
   },
 });
