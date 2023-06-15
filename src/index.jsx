@@ -2,9 +2,19 @@ import { useFonts } from 'expo-font';
 import { ActivityIndicator, View } from 'react-native';
 import { Provider } from 'react-redux';
 
+import { init } from './db';
 import Navigation from './navigation';
 import { Inicio, FotoPerfil } from './screens/index';
 import store from './store/index';
+
+init()
+  .then(() => {
+    console.log('DB inicializada ');
+  })
+  .catch((err) => {
+    console.log('La inicialización de la DB ha fallado');
+    console.log(err);
+  });
 
 export default function App() {
   const [loaded] = useFonts({

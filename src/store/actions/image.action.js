@@ -1,6 +1,6 @@
 import { imageType } from '../types';
 
-const { TAKE_IMAGE, URL_SETEADA } = imageType;
+const { TAKE_IMAGE, URL_SETEADA, URL_DB } = imageType;
 
 export const takeImage = (url) => ({
   type: TAKE_IMAGE,
@@ -10,4 +10,9 @@ export const takeImage = (url) => ({
 export const urlSeteada = (seteo) => ({
   type: URL_SETEADA,
   seteo,
+});
+
+export const urlDbSeteo = (seturl) => ({
+  type: URL_SETEADA,
+  seturl,
 });

@@ -6,4 +6,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  foto: {
+    width: '100%',
+    height: 100,
+  },
 });
