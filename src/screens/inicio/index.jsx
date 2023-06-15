@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { View, Text, Button, Image } from 'react-native';
-import { useSelector } from 'react-redux';
 
 import { styles } from './styles';
 import { COLORS } from '../../constants/theme/colors';

@@ -4,18 +4,14 @@ import { useSelector } from 'react-redux';
 
 import { styles } from './styles';
 import { ImageSelector } from '../../components';
-import { insertData } from '../../db/index';
-import Foto from '../../model/foto';
 
 const FotoPerfil = ({ navigation }) => {
   const [seteo, setSeteo] = useState(false);
   const imageUrl = useSelector((state) => state.image.url);
   const seteoBtn = useSelector((state) => state.image.seteo);
-  const newFoto = new Foto(imageUrl);
 
-  const saveImage = async () => {
+  const saveImage = () => {
     setSeteo(true);
-    const actualizarFoto = await insertData(newFoto.link);
   };
 
   const onHandlerBack = () => {

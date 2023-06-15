@@ -11,8 +11,3 @@ export const urlSeteada = (seteo) => ({
   type: URL_SETEADA,
   seteo,
 });
-
-export const urlDbSeteo = (seturl) => ({
-  type: URL_SETEADA,
-  seturl,
-});
