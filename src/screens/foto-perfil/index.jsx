@@ -1,25 +1,24 @@
 import { useState } from 'react';
 import { View, Text, Button, Image } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { styles } from './styles';
 import { ImageSelector } from '../../components';
-import { insertData, selectData } from '../../db/index';
-import { urlDbSeteo } from '../../store/actions/image.action';
+import { insertData } from '../../db/index';
+import Foto from '../../model/foto';
 
 const FotoPerfil = ({ navigation }) => {
-  const dispatch = useDispatch();
   const [seteo, setSeteo] = useState(false);
   const imageUrl = useSelector((state) => state.image.url);
   const seteoBtn = useSelector((state) => state.image.seteo);
-  console.log('Liga', imageUrl);
+  const newFoto = new Foto(imageUrl);
+
   const saveImage = async () => {
     setSeteo(true);
-    const resultDb = await insertData(imageUrl);
-    console.log('Resultado', resultDb._array);
+    const actualizarFoto = await insertData(newFoto.link);
   };
 
-  const onHandlerBack = async () => {
+  const onHandlerBack = () => {
     navigation.navigate('Inicio');
   };
 

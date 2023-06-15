@@ -1,12 +1,12 @@
 import * as SQLite from 'expo-sqlite';
 
-const db = SQLite.openDatabase('crcv.db');
+const db = SQLite.openDatabase('calculadora.db');
 
 export const init = () => {
   const promise = new Promise((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
-        'CREATE TABLE IF NOT EXISTS crcv (id INTEGER PRIMARY KEY NOT NULL, link TEXT NOT NULL)',
+        'CREATE TABLE IF NOT EXISTS calculadora (id INTEGER PRIMARY KEY NOT NULL, link TEXT NOT NULL)',
         [],
         () => {
           resolve();
@@ -25,11 +25,11 @@ export const insertData = (link) => {
   const promise = new Promise((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
-        'INSERT INTO crcv (link) values(?)',
+        'INSERT INTO calculadora (link) VALUES (?)',
         [link],
         (_, result) => {
-          console.log('RESULTADOS', result._array);
           resolve(result);
+          console.log('EXITO', result);
         },
         (_, err) => {
           reject(err);
@@ -37,6 +37,7 @@ export const insertData = (link) => {
       );
     });
   });
+
   return promise;
 };
 
@@ -44,7 +45,7 @@ export const selectData = () => {
   const promise = new Promise((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
-        'SELECT * FROM crcv',
+        'SELECT * FROM calculadora',
         [],
         (_, result) => {
           resolve(result);

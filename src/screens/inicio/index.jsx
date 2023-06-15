@@ -1,21 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { View, Text, Button, Image } from 'react-native';
 import { useSelector } from 'react-redux';
 
 import { styles } from './styles';
 import { COLORS } from '../../constants/theme/colors';
-import { selectData } from '../../db';
 
 const Inicio = ({ navigation }) => {
-  const fotoObtenida = async () => {
-    try {
-      const result = await selectData();
-      return result?.rows?._array;
-    } catch (error) {
-      console.warn(error);
-    }
-  };
-
+  const [fotoObtenida, setFotoObtenida] = useState(null);
   const fotoPerfilHandler = () => {
     navigation.navigate('FotoPerfil');
   };
@@ -27,6 +18,7 @@ const Inicio = ({ navigation }) => {
         color={COLORS.secondary}
         onPress={fotoPerfilHandler}
       />
+
       <View>
         {!fotoObtenida ? (
           <Text>No hay foto de perfil</Text>

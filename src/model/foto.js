@@ -1,7 +1,7 @@
-class Place {
+class Foto {
   constructor(link) {
     this.link = link;
   }
 }
 
-export default Place;
+export default Foto;

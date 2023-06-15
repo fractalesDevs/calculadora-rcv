@@ -1,11 +1,10 @@
 import { imageType } from '../types';
 
-const { TAKE_IMAGE, URL_SETEADA, URL_DB } = imageType;
+const { TAKE_IMAGE, URL_SETEADA } = imageType;
 
 const initialState = {
   url: null,
   seteo: false,
-  seturl: null,
 };
 
 const imageReducer = (state = initialState, action) => {
@@ -19,11 +18,6 @@ const imageReducer = (state = initialState, action) => {
       return {
         ...state,
         seteo: action.seteo,
-      };
-    case URL_DB:
-      return {
-        ...state,
-        seturl: action.seturl,
       };
     default:
       return state;
