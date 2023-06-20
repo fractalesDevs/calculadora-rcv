@@ -1,17 +1,26 @@
 import { useState } from 'react';
 import { View, Text, Button, Image } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { styles } from './styles';
 import { ImageSelector } from '../../components';
+import { fetchData, insertData } from '../../db';
+import { dataGuardada, dataObtenida } from '../../store/actions/image.action';
 
 const FotoPerfil = ({ navigation }) => {
+  const dispatch = useDispatch();
   const [seteo, setSeteo] = useState(false);
   const imageUrl = useSelector((state) => state.image.url);
   const seteoBtn = useSelector((state) => state.image.seteo);
 
-  const saveImage = () => {
+  const saveImage = async () => {
     setSeteo(true);
+    try {
+      const result = await insertData(imageUrl);
+      dispatch(dataGuardada(result));
+    } catch {
+      console.log('Error');
+    }
   };
 
   const onHandlerBack = () => {
