@@ -17,7 +17,6 @@ const Calculadora = () => {
 
   const [activoMan, setActivoMan] = useState(false);
   const [activoWoman, setActivoWoman] = useState(false);
-  const [activoDiabetes, setActivoDiabetes] = useState(false);
 
   const onHandleSexo = (sexo) => {
     setSexo(sexo);
