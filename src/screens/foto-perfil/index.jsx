@@ -24,7 +24,7 @@ const FotoPerfil = ({ navigation }) => {
   };
 
   const onHandlerBack = () => {
-    navigation.navigate('Inicio');
+    navigation.navigate('Perfil');
   };
 
   return (
@@ -33,7 +33,7 @@ const FotoPerfil = ({ navigation }) => {
       {seteo ? (
         <View>
           <Image style={styles.img} source={{ uri: imageUrl }} />
-          <Button title="Regresar a calculadora" style={styles.btnBack} onPress={onHandlerBack} />
+          <Button title="Regresar a perfil" style={styles.btnBack} onPress={onHandlerBack} />
         </View>
       ) : (
         <View>

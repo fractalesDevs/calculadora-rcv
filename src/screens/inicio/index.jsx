@@ -1,24 +1,23 @@
 import { useFocusEffect } from '@react-navigation/native';
-import { useCallback, useEffect, useState } from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useCallback, useState } from 'react';
+import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
 
 import { styles } from './styles';
 import { fetchData } from '../../db';
-import { dataObtenida } from '../../store/actions/image.action';
 
 const Inicio = ({ navigation }) => {
-  const [fotoObtenida, setFotoObtenida] = useState(null);
-  const dispatch = useDispatch();
+  const editarPerfil = () => {
+    navigation.navigate('Perfil');
+  };
+  const [fotoHome, setFotoHome] = useState(null);
 
-  const urlFotoPerfil = async () => {
+  const fotoHomeUrl = async () => {
     try {
       const result = await fetchData();
       const arrayResult = result.rows._array;
-      dispatch(dataObtenida(arrayResult));
       const lastItem = arrayResult[arrayResult.length - 1];
       const linkItem = lastItem.link;
-      setFotoObtenida(linkItem);
+      setFotoHome(linkItem);
     } catch {
       console.log('Error');
     }
@@ -26,28 +25,33 @@ const Inicio = ({ navigation }) => {
 
   useFocusEffect(
     useCallback(() => {
-      urlFotoPerfil();
-    }, [urlFotoPerfil])
+      fotoHomeUrl();
+    }, [fotoHomeUrl])
   );
 
-  const fotoPerfilHandler = () => {
-    navigation.navigate('FotoPerfil');
-  };
-
   return (
-    <View style={styles.container}>
-      <View style={styles.contFotoPer}>
-        {!fotoObtenida ? (
-          <Text>No hay foto de perfil</Text>
-        ) : (
-          <Image style={styles.foto} source={{ uri: fotoObtenida }} />
-        )}
-      </View>
-
-      <TouchableOpacity onPress={fotoPerfilHandler} style={styles.btnPerfil}>
-        <Text style={styles.txtBtnPer}>Establecer foto</Text>
+    <ScrollView style={styles.container}>
+      <TouchableOpacity onPress={editarPerfil} style={styles.btnPerfil}>
+        <Text style={styles.txtBtnPer}>Consultar Perfil Médico</Text>
+        <View style={styles.fotoHome}>
+          <Image style={styles.fotoHomeMin} source={{ uri: fotoHome }} />
+        </View>
       </TouchableOpacity>
-    </View>
+      <View style={styles.container}>
+        <Image style={styles.logoInicio} source={require('../../../assets/img/logoInicio.png')} />
+        <View style={styles.contBlanco}>
+          <Text style={styles.titInicio}>Cálculo y disminución del RCV </Text>
+          <Text style={styles.txtInicio}>
+            De acuerdo con la Organización Mundial de la Salud, las enfermedades cardiovasculares
+            causan el fallecimiento de más de 17 millones de personas en el mundo cada año. El
+            riesgo que un determinado individuo tiene de padecer un episodio de enfermedad coronaria
+            u otra enfermedad de origen ateromatoso en los años siguientes puede valorarse
+            atendiendo a los principales factores de riesgo cardiovascular y la forma en que éstos
+            interactúan. Utilice la siguiente herramienta para calcular el riesgo de su paciente.*
+          </Text>
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 

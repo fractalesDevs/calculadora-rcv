@@ -1,33 +1,70 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 import { COLORS } from '../../constants/theme/colors';
 
+const { width, height } = Dimensions.get('screen');
 export const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    paddingVertical: 40,
-    paddingHorizontal: 30,
+    flex: 1,
+    backgroundColor: COLORS.backs,
+    paddingBottom: 30,
   },
   btnPerfil: {
-    width: '60%',
-    height: '45%',
+    width: '100%',
+    height: '9%',
     textAlignVertical: 'center',
     backgroundColor: COLORS.secondary,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
-    borderRadius: 15,
+    marginBottom: 30,
+    flexDirection: 'row',
   },
   txtBtnPer: {
     color: COLORS.white,
+    fontSize: 20,
+    marginHorizontal: 20,
+    flex: 0.9,
   },
-  contFotoPer: {
-    width: '40%',
+  logoInicio: {
+    width: 250,
+    height: 90,
+    marginLeft: 65,
   },
-  foto: {
-    width: '75%',
-    height: 100,
-    alignContent: 'center',
+  contBlanco: {
+    width: '88%',
+    backgroundColor: COLORS.white,
+    paddingHorizontal: 25,
+    marginHorizontal: 25,
+    padding: 20,
+    marginVertical: 20,
+    borderRadius: 15,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4.65,
+
+    elevation: 8,
+  },
+  titInicio: {
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 25,
+    color: COLORS.secondary,
+  },
+  txtInicio: {
+    fontFamily: 'Montserrat-Regular',
+    fontSize: 18,
+  },
+  fotoHome: {
+    height: 50,
+    flex: 0.15,
+    marginHorizontal: 15,
+  },
+  fotoHomeMin: {
+    width: width * 0.13,
+    height: 50,
     borderRadius: 50,
   },
 });

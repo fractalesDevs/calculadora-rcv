@@ -1,12 +1,14 @@
 import { imageType } from '../types';
 
-const { TAKE_IMAGE, URL_SETEADA, DATA_GUARDADA, DATA_OBTENIDA } = imageType;
+const { TAKE_IMAGE, URL_SETEADA, DATA_GUARDADA, DATA_OBTENIDA, ESTABLECER_NOMBRE } = imageType;
 
 const initialState = {
   url: null,
   seteo: false,
   payload: [],
-  data: [],
+  data: '',
+  nombre: '',
+  grabado: false,
 };
 
 const imageReducer = (state = initialState, action) => {
@@ -30,6 +32,12 @@ const imageReducer = (state = initialState, action) => {
       return {
         ...state,
         data: action.data,
+      };
+    case ESTABLECER_NOMBRE:
+      return {
+        ...state,
+        nombre: action.nombre,
+        grabado: action.grabado,
       };
     default:
       return state;

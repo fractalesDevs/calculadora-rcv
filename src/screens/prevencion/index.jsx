@@ -18,7 +18,7 @@ const Prevencion = ({ navigation }) => {
   const keyExtractor = (item) => item.id.toString();
 
   return (
-    <ScrollView style={styles.scrollCont}>
+    <View style={styles.scrollCont}>
       <View style={styles.container}>
         <Image style={styles.logoMed} source={require('../../../assets/img/logo-medidas.png')} />
         <Text style={styles.titMedidas}>
@@ -26,10 +26,11 @@ const Prevencion = ({ navigation }) => {
           cardio vascular o riesgo de sufrir alguna enfermedad del corazón.
         </Text>
       </View>
+
       <View style={styles.container2}>
         <FlatList data={medidas} renderItem={renderItem} keyExtractor={keyExtractor} />
       </View>
-    </ScrollView>
+    </View>
   );
 };
 

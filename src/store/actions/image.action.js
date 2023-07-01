@@ -1,6 +1,6 @@
 import { imageType } from '../types';
 
-const { TAKE_IMAGE, URL_SETEADA, DATA_GUARDADA, DATA_OBTENIDA } = imageType;
+const { TAKE_IMAGE, URL_SETEADA, DATA_GUARDADA, DATA_OBTENIDA, ESTABLECER_NOMBRE } = imageType;
 
 export const takeImage = (url) => ({
   type: TAKE_IMAGE,
@@ -20,4 +20,10 @@ export const dataGuardada = (payload) => ({
 export const dataObtenida = (data) => ({
   type: DATA_OBTENIDA,
   data,
+});
+
+export const establecerNombre = (nombre, grabado) => ({
+  type: ESTABLECER_NOMBRE,
+  nombre,
+  grabado,
 });

@@ -9,15 +9,14 @@ export const styles = StyleSheet.create({
     backgroundColor: '#DCE9FF',
   },
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ffffff',
-    height: height * 0.4,
-    marginBottom: -35,
+    marginBottom: -15,
     borderBottomLeftRadius: 50,
     borderBottomRightRadius: 50,
-    paddingTop: 30,
+    paddingTop: 45,
+    paddingBottom: 10,
   },
   container2: {
     flex: 1,
@@ -32,7 +31,7 @@ export const styles = StyleSheet.create({
     color: COLORS.primary,
   },
   logoMed: {
-    width: width * 0.8,
-    height: 80,
+    width: width * 0.75,
+    height: 70,
   },
 });

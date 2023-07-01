@@ -7,8 +7,6 @@ const { width, height } = Dimensions.get('screen');
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   imgContainer: {
     width: width * 0.85,
@@ -29,6 +27,6 @@ export const styles = StyleSheet.create({
     height: '100%',
   },
   btn: {
-    width: width * 0.8,
+    width: width * 1,
   },
 });
