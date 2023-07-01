@@ -67,7 +67,7 @@ const Calculadora = () => {
         ptEdad = 5;
       } else if (edad >= 65 && edad <= 69) {
         ptEdad = 6;
-      } else if (edad >= 70 && edad <= 74) {
+      } else if (edad >= 70 && edad >= 74) {
         ptEdad = 7;
       }
       // Calcular puntos por Diabetes
@@ -291,7 +291,7 @@ const Calculadora = () => {
           default:
             console.log('Algo va mal!!');
         }
-      } else if (edad >= 70 && edad <= 74) {
+      } else if (edad >= 70 && edad >= 74) {
         console.log('Edad 70-74');
         switch (true) {
           case sf <= 1 && sf <= 1.9:
@@ -329,7 +329,7 @@ const Calculadora = () => {
         ptEdad = 8;
       } else if (edad >= 65 && edad <= 69) {
         ptEdad = 8;
-      } else if (edad >= 70 && edad <= 74) {
+      } else if (edad >= 70 && edad >= 74) {
         ptEdad = 8;
       }
       // Calcular puntos por Diabetes
@@ -553,7 +553,7 @@ const Calculadora = () => {
           default:
             console.log('Algo va mal!!');
         }
-      } else if (edad >= 70 && edad <= 74) {
+      } else if (edad >= 70 && edad >= 74) {
         console.log('Edad 70-74');
         switch (true) {
           case sf <= 1 && sf <= 1.9:
